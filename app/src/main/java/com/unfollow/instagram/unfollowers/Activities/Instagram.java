@@ -119,7 +119,8 @@ public class Instagram extends AppCompatActivity {
         @Override
         protected void onPostExecute(JSONObject jsonObject) {
             super.onPostExecute(jsonObject);
-            wait.dismiss();
+            if (wait != null)
+                wait.dismiss();
             data = jsonObject;
             System.out.println(data.toString());
         }
